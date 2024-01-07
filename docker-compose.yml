@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  blog_next:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports: 
+      - 3000:3000
+    volumes: 
+      - .:/blog_next  
+    container_name: blog_next
+    image: blog_next:1.0.0
