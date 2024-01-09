@@ -21,7 +21,7 @@ import {
 	DropdownMenu,
 } from "@nextui-org/react";
 import { Logo } from "@/components/Logo";
-import Footer from "@/components/Footer";
+import WebFooter from "@/components/WebFooter";
 
 // export const metadata: Metadata = {
 // 	title: "Create Next App",
@@ -46,17 +46,21 @@ export default function RootLayout({
 					<NavbarContent className='hidden sm:flex gap-16' justify='center'>
 						<NavbarItem>
 							<Link
+								size='md'
 								href='/'
 								aria-current='page'
 								color={pathname === "/" ? "primary" : "foreground"}
+								className='text-2xl'
 							>
 								文库
 							</Link>
 						</NavbarItem>
 						<NavbarItem>
 							<Link
+								size='md'
 								color={pathname === "/personal" ? "primary" : "foreground"}
 								href='/personal'
+								className='text-2xl'
 							>
 								我的
 							</Link>
@@ -68,7 +72,13 @@ export default function RootLayout({
 							{/* <Link href='#'>Login</Link> */}
 						</NavbarItem>
 						<NavbarItem>
-							<Button as={Link} color='primary' href='#' variant='flat'>
+							<Button
+								as={Link}
+								color='primary'
+								href='#'
+								variant='flat'
+								className='text-1xl'
+							>
 								{/* Sign Up */}
 								个人网站
 							</Button>
@@ -76,7 +86,7 @@ export default function RootLayout({
 					</NavbarContent>
 				</Navbar>
 				{children}
-				<Footer />
+				<WebFooter />
 			</body>
 		</html>
 	);
