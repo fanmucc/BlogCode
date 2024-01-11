@@ -9,8 +9,8 @@ export default function TemplateSetting() {
 				<div className='px-[16px] py-[8px] border rounded-[12px] border-[#e3e8f7] h-40 w-60 hover:bg-[#4f46e5] hover:text-[#FFFFFF] cursor-pointer'>
 					<div>Hover颜色</div>
 				</div>
-				<div className='px-[16px] py-[8px] border rounded-[12px] border-[#e3e8f7] h-40 w-60 bg-[#f7f9fe]'>
-					默认背景色: #f7f9fe;
+				<div className='px-[16px] py-[8px] border rounded-[12px] border-[#f9fafb] h-40 w-60 bg-[#f7f9fe]'>
+					默认背景色: #f7f9fe | #f9fafb;
 				</div>
 				<div className='px-[16px] py-[8px] border rounded-[12px] border-[#e3e8f7] h-40 w-60 bg-[#FFFFFF]'>
 					卡片默认背景色: #FFFFFF;
