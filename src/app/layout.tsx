@@ -37,7 +37,7 @@ export default function RootLayout({
 
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
+			<body className={`${inter.className}`}>
 				<Navbar>
 					<NavbarBrand>
 						<Logo />
@@ -72,13 +72,7 @@ export default function RootLayout({
 							{/* <Link href='#'>Login</Link> */}
 						</NavbarItem>
 						<NavbarItem>
-							<Button
-								as={Link}
-								color='primary'
-								href='#'
-								variant='flat'
-								className='text-1xl'
-							>
+							<Button color='primary' href='#' className='text-1xl'>
 								{/* Sign Up */}
 								个人网站
 							</Button>
