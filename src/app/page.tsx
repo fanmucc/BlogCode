@@ -23,6 +23,16 @@ export default function Home() {
 					</a>
 				</div> */}
 			</div>
+			<div className='flex flex-col bg-blog-bg-color p-20'>
+				<div className='text-2xl text-blog-text'>公共样式使用</div>
+				<div className='text-blog-text-primary'>主题色</div>
+				<div className='text-blog-text hover:text-blog-text-primary cursor-pointer'>
+					文字hover颜色
+				</div>
+				<div className='p-8 w-50 h-50 bg-blog-card-bg-color border-blog-card-width border-solid border-1 rounded-[12px] hover:bg-blog-text-primary hover:text-white cursor-pointer shadow-blog-card-show'>
+					我是一个卡片 圆角与边框色
+				</div>
+			</div>
 			<TemplateSetting />
 		</main>
 	);

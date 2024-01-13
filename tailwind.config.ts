@@ -28,41 +28,62 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'bg-a': withOpacity('--blog-bg')
-        // 'bg-a': `var(--blog-bg)`
+        'blog-text-primary': withOpacity('--blog-text-primary'),
+        'blog-hover': withOpacity('--blog-hover'),
+        'blog-bg-color': withOpacity('--blog-bg-color'),
+        'blog-card-bg-color': withOpacity('--blog-card-bg-color'),
+        'blog-card-border-color': withOpacity('--blog-card-border-color'),
+        'blog-text': withOpacity('--blog-text'),
+      },
+      boxShadow: {
+        'blog-card-show': 'var(--blog-card-show)'
       }
     },
   },
   darkMode: "class",
   plugins: [nextui({
     // 配置nextui公共参数
-    themes: {
-      light: {
-        // ...
-        colors: {
-          // 默认文字颜色
-          foreground: "#11181C",
-          primary: {
-            // 相关文字颜色
-            foreground: "#FFFFFF",
-            // 主题色
-            DEFAULT: "#4f46e5",
-          },
-        },
-      },
-      dark: {
-        // ...
-        colors: {
-          foreground: "#11181C",
-          primary: {
-            // 相关文字颜色
-            foreground: "#FFFFFF",
-            // 主题色
-            DEFAULT: "red",
-          },
-        },
-      },
-    }
+    // layout: {
+    //   // fontSize: {
+    //   //   tiny: "16px",
+    //   //   small: "12px",
+    //   //   medium: "18px",
+    //   //   large: "22px",
+    //   // }
+    // },
+    // themes: {
+    //   light: {
+    //     // ...
+    //     colors: {
+    //       // 默认文字颜色
+    //       foreground: "#11181C",
+    //       primary: {
+    //         // 相关文字颜色
+    //         foreground: "#FFFFFF",
+    //         // 主题色
+    //         DEFAULT: "#4f46e5",
+    //       },
+    //       background: {
+    //         DEFAULT: "#4f46e5",
+    //       }
+    //     },
+    //   },
+    //   dark: {
+    //     // ...
+    //     colors: {
+    //       foreground: "#11181C",
+    //       primary: {
+    //         // 相关文字颜色
+    //         foreground: "#FFFFFF",
+    //         // 主题色
+    //         DEFAULT: "red",
+    //       },
+    //       background: {
+    //         DEFAULT: "#4f46e5",
+    //       }
+    //     },
+    //   },
+    // }
   })]
 }
 export default config

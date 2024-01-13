@@ -1,10 +1,10 @@
 "use client";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 import { usePathname } from "next/navigation";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 
 	return (
 		<html lang='en'>
-			<body className={`${inter.className}`}>
+			<body className={`light`}>
 				<Navbar>
 					<NavbarBrand>
 						<Logo />
@@ -60,7 +60,6 @@ export default function RootLayout({
 								size='md'
 								color={pathname === "/personal" ? "primary" : "foreground"}
 								href='/personal'
-								className='text-2xl'
 							>
 								我的
 							</Link>
