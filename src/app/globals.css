@@ -31,15 +31,21 @@
 	--blog-text: 54, 54, 54;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-		/* 基础字体大小 */
-		font-size: 12px;
-	}
+:root .dark {
+	font-size: 12px;
+	--blog-text-primary: 79, 70, 229;
+	--blog-hover: 79, 70, 229;
+	--blog-bg-color: 24, 23, 29;
 }
+
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		font-size: 12px;
+		--blog-text-primary: 79, 70, 229;
+		--blog-hover: 79, 70, 229;
+		--blog-bg-color: 24, 23, 29;
+	}
+} */
 
 @layer base {
 	:root {
@@ -64,16 +70,25 @@
 		/* 文字颜色 */
 		--blog-text: 54, 54, 54;
 	}
-	.dark :root {
-		--blog-bg: 31, 58, 95;
+	:root .dark {
 		/* 基础字体大小 */
 		font-size: 12px;
+		/* 主题色 */
+		--blog-text-primary: 79, 70, 229;
+		/* hover颜色 */
+		--blog-hover: 79, 70, 229;
+		/* 默认背景色 */
+		--blog-bg-color: 24, 23, 29;
 	}
 	@media (prefers-color-scheme: dark) {
 		:root {
-			--blog-bg: 31, 58, 95;
-			/* 基础字体大小 */
 			font-size: 12px;
+			/* 主题色 */
+			--blog-text-primary: 79, 70, 229;
+			/* hover颜色 */
+			--blog-hover: 79, 70, 229;
+			/* 默认背景色 */
+			--blog-bg-color: 24, 23, 29;
 		}
 	}
 }
