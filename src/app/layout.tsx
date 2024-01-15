@@ -22,9 +22,12 @@ export default function RootLayout({
 }) {
 	const cookieStore = cookies();
 	// 没有的话 则为auto 自适应
-	const theme: RequestCookie | undefined = cookieStore.get("theme");
+	const theme: RequestCookie | undefined = cookieStore.get(
+		"blog_next_theme_type"
+	);
 	console.log(theme, "===获取到theme===");
-	const themeValue: string = theme?.value || "auto";
+	const themeValue: string = theme?.value || "";
+
 	return (
 		<html lang='en'>
 			<body className={themeValue}>

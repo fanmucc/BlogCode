@@ -31,9 +31,11 @@ const config: Config = {
         'blog-text-primary': withOpacity('--blog-text-primary'),
         'blog-hover': withOpacity('--blog-hover'),
         'blog-bg-color': withOpacity('--blog-bg-color'),
-        'blog-card-bg-color': withOpacity('--blog-card-bg-color'),
-        'blog-card-border-color': withOpacity('--blog-card-border-color'),
+        'blog-card-bg': withOpacity('--blog-card-bg-color'),
+        'blog-border-color': withOpacity('--blog-card-border-color'),
         'blog-text': withOpacity('--blog-text'),
+        'blog-text-black': withOpacity('--blog-text-black'),
+        'blog-text-desc': withOpacity('--blog-text-desc'),
       },
       boxShadow: {
         'blog-card-show': 'var(--blog-card-show)'
