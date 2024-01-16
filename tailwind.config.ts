@@ -45,47 +45,37 @@ const config: Config = {
   darkMode: "class",
   plugins: [nextui({
     // 配置nextui公共参数
-    // layout: {
-    //   // fontSize: {
-    //   //   tiny: "16px",
-    //   //   small: "12px",
-    //   //   medium: "18px",
-    //   //   large: "22px",
-    //   // }
-    // },
-    // themes: {
-    //   light: {
-    //     // ...
-    //     colors: {
-    //       // 默认文字颜色
-    //       foreground: "#11181C",
-    //       primary: {
-    //         // 相关文字颜色
-    //         foreground: "#FFFFFF",
-    //         // 主题色
-    //         DEFAULT: "#4f46e5",
-    //       },
-    //       background: {
-    //         DEFAULT: "#4f46e5",
-    //       }
-    //     },
-    //   },
-    //   dark: {
-    //     // ...
-    //     colors: {
-    //       foreground: "#11181C",
-    //       primary: {
-    //         // 相关文字颜色
-    //         foreground: "#FFFFFF",
-    //         // 主题色
-    //         DEFAULT: "red",
-    //       },
-    //       background: {
-    //         DEFAULT: "#4f46e5",
-    //       }
-    //     },
-    //   },
-    // }
+    layout: {
+    },
+    defaultTheme: 'light',
+    defaultExtendTheme: "light",
+    themes: {
+      light: {
+        // ...
+        colors: {
+          // 默认文字颜色
+          foreground: "#11181C",
+          primary: {
+            // 相关文字颜色
+            foreground: "#FFFFFF",
+            // 主题色
+            DEFAULT: '#4f46e5ff',
+          },
+        },
+      },
+      dark: {
+        // ...
+        colors: {
+          foreground: "#11181C",
+          primary: {
+            // 相关文字颜色
+            foreground: "#FFFFFF",
+            // 主题色
+            DEFAULT: '#ffc848ff',
+          },
+        },
+      },
+    }
   })]
 }
 export default config

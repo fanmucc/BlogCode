@@ -3,11 +3,12 @@ import { useEffect } from "react";
 import Cookies from "js-cookie";
 
 import TemplateSetting from "@/components/TemplateSetting";
+import { Button } from "@nextui-org/react";
 
 export default function Home() {
-	let themeTypeCookies = Cookies.get("blog_next_theme_type");
+	// let themeTypeCookies = Cookies.get("blog_next_theme_type");
 	// useEffect(() => {
-	// 	if (themeTypeCookies === "auto") {
+	// 	if (themeTypeCookies === "") {
 	// 		const darkModeMediaQuery = window.matchMedia(
 	// 			"(prefers-color-scheme: dark)"
 	// 		);
@@ -74,6 +75,16 @@ export default function Home() {
 					>
 						AUTO
 					</div>
+				</div>
+				<div className='mt-[20px]'>
+					<Button
+						disableRipple
+						className="relative overflow-visible rounded-full hover:-translate-y-1 px-12 shadow-xl bg-background/30 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:!duration-500 hover:after:scale-150 hover:after:opacity-0 light:text-black dark:text-white"
+						size='lg'
+					>
+						Press me
+					</Button>
+					<Button color='primary'>Press me</Button>
 				</div>
 			</div>
 			<TemplateSetting />

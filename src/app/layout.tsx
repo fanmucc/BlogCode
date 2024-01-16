@@ -31,6 +31,38 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={themeValue}>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+                (function () {
+									try {
+										const allCookies = document.cookie;
+										// 将所有 cookie 切割成数组
+										const cookiesArray = allCookies.split(';');
+										// 遍历数组以获取特定 cookie 的值
+										let theme;
+										for (const cookie of cookiesArray) {
+												const [cookieName, cookieContent] = cookie.trim().split('=');
+												// 检查是否是你想要的 cookie
+												if (cookieName === 'blog_next_theme_type') {
+													theme = cookieContent;
+														break;
+												}
+										}
+										if (theme) return
+										const darkModeMediaQuery = window.matchMedia(
+											"(prefers-color-scheme: dark)"
+										);
+										const isDarkMode = darkModeMediaQuery.matches;
+										if (isDarkMode) {
+											document.body.classList.add('dark')
+										} else {
+											document.body.classList.add('light')
+										}
+									} catch(err) {}
+								})()`,
+					}}
+				/>
 				{children}
 				<WebFooter />
 			</body>
