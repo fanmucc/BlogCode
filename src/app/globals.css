@@ -4,9 +4,6 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--foreground-rgb: 0, 0, 0;
-		--background-start-rgb: 214, 219, 220;
-		--background-end-rgb: 255, 255, 255;
 		/* 基础字体大小 */
 		font-size: 12px;
 		font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
@@ -63,9 +60,6 @@
 }
 
 :root .light {
-	--foreground-rgb: 0, 0, 0;
-	--background-start-rgb: 214, 219, 220;
-	--background-end-rgb: 255, 255, 255;
 	/* 基础字体大小 */
 	font-size: 12px;
 	font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
@@ -195,14 +189,7 @@
 }
 
 body {
-	/* color: rgb(var(--foreground-rgb)); */
 	color: black;
-	/* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 	background: white;
 	min-height: 100vh;
 }
