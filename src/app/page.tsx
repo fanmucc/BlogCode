@@ -67,7 +67,7 @@ export default function Home() {
 								"(prefers-color-scheme: dark)"
 							);
 							const isDarkMode = darkModeMediaQuery.matches;
-							Cookies.set("blog_next_theme_type", "auto");
+							Cookies.set("blog_next_theme_type", "");
 							document.body.className = isDarkMode ? "dark" : "light";
 							// cookies().set("theme", "auto");
 						}}

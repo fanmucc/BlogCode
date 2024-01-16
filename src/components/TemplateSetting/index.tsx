@@ -34,7 +34,7 @@ export default function TemplateSetting() {
 					默认字体大小: 16px
 				</div>
 				<div className='px-[16px] py-[8px] border rounded-[12px] border-[#e3e8f7] h-40 w-60 text-[#363636]'>
-					默认字体: "PingFang SC","Hiragino Sans GB","Microsoft YaHei";
+					默认字体: PingFang SC, Hiragino Sans GB, Microsoft YaHei;
 				</div>
 			</div>
 		</div>
