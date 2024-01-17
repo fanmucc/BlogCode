@@ -1,3 +1,4 @@
+"use client";
 import { usePathname } from "next/navigation";
 
 import {
@@ -13,14 +14,28 @@ import {
 	DropdownMenu,
 } from "@nextui-org/react";
 import { Logo } from "@/components/Logo";
+import IconFont from "@/components/BusComponents/IconFont";
 
 const BlogHeader = () => {
 	const pathname = usePathname();
 	return (
-		<Navbar>
+		<Navbar className='h-[60px] bg-blog-bg-color'>
 			<NavbarBrand>
-				<Logo />
-				{/* <p className='font-bold text-inherit'></p> */}
+				{/* <Logo /> */}
+				<div className='group h-[35px] w-[70px] cursor-pointer'>
+					<Link
+						className='relative h-[35px] w-[70px] flex items-center justify-center text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
+						href='/'
+					>
+						Fan'mu
+						<span className='absolute left-0 top-0 h-[35px] w-[70px] bg-blog-text-primary/100 flex items-center justify-center hidden group-hover:flex'>
+							<IconFont
+								type='icon-[material-symbols-light--home-rounded]'
+								className='text-[28px] text-blog-card-bg'
+							/>
+						</span>
+					</Link>
+				</div>
 			</NavbarBrand>
 			<NavbarContent className='hidden sm:flex gap-16' justify='center'>
 				<NavbarItem>
@@ -28,8 +43,8 @@ const BlogHeader = () => {
 						size='md'
 						href='/'
 						aria-current='page'
-						color={pathname === "/" ? "primary" : "foreground"}
-						className='text-2xl'
+						// color={pathname === "/" ? "primary" : "foreground"}
+						className='text-[16px] font-[700] tracking-[6px] text-blog-text'
 					>
 						文库
 					</Link>
@@ -37,8 +52,9 @@ const BlogHeader = () => {
 				<NavbarItem>
 					<Link
 						size='md'
-						color={pathname === "/personal" ? "primary" : "foreground"}
+						// color={pathname === "/personal" ? "primary" : "foreground"}
 						href='/personal'
+						className='text-[16px] font-[700] tracking-[6px] text-blog-text'
 					>
 						我的
 					</Link>

@@ -4,20 +4,12 @@ import Cookies from "js-cookie";
 
 import TemplateSetting from "@/components/TemplateSetting";
 import { Button } from "@nextui-org/react";
+import BlogHeader from "@/components/BlogHeader";
 
 export default function Home() {
-	// let themeTypeCookies = Cookies.get("blog_next_theme_type");
-	// useEffect(() => {
-	// 	if (themeTypeCookies === "") {
-	// 		const darkModeMediaQuery = window.matchMedia(
-	// 			"(prefers-color-scheme: dark)"
-	// 		);
-	// 		const isDarkMode = darkModeMediaQuery.matches;
-	// 		document.body.className = isDarkMode ? "dark" : "light";
-	// 	}
-	// }, [themeTypeCookies]);
 	return (
-		<main className='grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8 bg-bg-a dark:bg-bg-a bg-blog-bg-color'>
+		<main className='grid min-h-full place-items-center bg-bg-a bg-blog-bg-color'>
+			<BlogHeader />
 			<div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>
 				<h1 className='mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>

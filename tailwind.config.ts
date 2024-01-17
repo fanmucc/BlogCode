@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 // 引入nextui
 import { nextui } from "@nextui-org/react";
+const { addDynamicIconSelectors } = require('@iconify/tailwind')
 // 颜色转化 适应透明度
 function withOpacity(variableName: string): any {
   return ({ opacityValue }: any) => {
@@ -59,7 +60,7 @@ const config: Config = {
             // 相关文字颜色
             foreground: "#FFFFFF",
             // 主题色
-            DEFAULT: '#4f46e5ff',
+            DEFAULT: '#4f46e5',
           },
         },
       },
@@ -71,11 +72,11 @@ const config: Config = {
             // 相关文字颜色
             foreground: "#FFFFFF",
             // 主题色
-            DEFAULT: '#ffc848ff',
+            DEFAULT: '#ffc848',
           },
         },
       },
     }
-  })]
+  }), addDynamicIconSelectors()]
 }
 export default config
