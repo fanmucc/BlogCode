@@ -88,7 +88,9 @@ const BlogHeader = () => {
 						<PopoverTrigger>
 							<div className='px-[4px] py-[2px] flex items-center bg-blog-bg-op/15 rounded-[40px] cursor-pointer'>
 								<IconFont type='icon-[material-symbols--language]' size={16} />
-								<span className='ml-[4px] text-[12px] scale-80'>简体</span>
+								<span className='ml-[4px] text-[12px] scale-80 text-blog-text'>
+									简体
+								</span>
 							</div>
 						</PopoverTrigger>
 						<PopoverContent>
@@ -108,7 +110,9 @@ const BlogHeader = () => {
 									type='icon-[fluent--weather-sunny-low-48-filled]'
 									size={16}
 								/>
-								<span className='ml-[4px] text-[12px] scale-80'>浅色模式</span>
+								<span className='ml-[4px] text-[12px] scale-80 text-blog-text'>
+									浅色模式
+								</span>
 							</div>
 						</PopoverTrigger>
 						<PopoverContent>
