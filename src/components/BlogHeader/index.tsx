@@ -12,6 +12,11 @@ import {
 	DropdownTrigger,
 	Dropdown,
 	DropdownMenu,
+	Popover,
+	PopoverTrigger,
+	PopoverContent,
+	Tabs,
+	Tab,
 } from "@nextui-org/react";
 import { Logo } from "@/components/Logo";
 import IconFont from "@/components/BusComponents/IconFont";
@@ -31,7 +36,8 @@ const BlogHeader = () => {
 						<span className='absolute left-0 top-0 h-[35px] w-[70px] bg-blog-text-primary/100 flex items-center justify-center hidden group-hover:flex'>
 							<IconFont
 								type='icon-[material-symbols-light--home-rounded]'
-								className='text-[28px] text-blog-card-bg'
+								size={28}
+								className='text-blog-bg-color'
 							/>
 						</span>
 					</Link>
@@ -61,15 +67,78 @@ const BlogHeader = () => {
 				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent justify='end'>
-				<NavbarItem className='hidden lg:flex'>
-					{/* <Link href='#'>Fanmu</Link> */}
-					{/* <Link href='#'>Login</Link> */}
+				<NavbarItem>
+					<Popover placement='bottom'>
+						<PopoverTrigger>
+							<div className='px-[4px] py-[2px] flex items-center bg-blog-bg-op/15 rounded-[40px] cursor-pointer'>
+								<IconFont type='icon-[material-symbols--language]' size={16} />
+								<span className='ml-[4px] text-[12px] scale-80'>简体</span>
+							</div>
+						</PopoverTrigger>
+						<PopoverContent>
+							<Tabs radius={"full"} aria-label='language'>
+								<Tab key='zh-CN' title='中文简体' />
+								<Tab key='zh-TW' title='中文繁体' />
+								<Tab key='en' title='英文' />
+							</Tabs>
+						</PopoverContent>
+					</Popover>
 				</NavbarItem>
 				<NavbarItem>
-					<Button color='primary' href='#' className='text-1xl'>
-						{/* Sign Up */}
-						个人网站
-					</Button>
+					<Popover placement='bottom'>
+						<PopoverTrigger>
+							<div className='px-[4px] py-[2px] flex items-center bg-blog-bg-op/15 rounded-[40px] cursor-pointer'>
+								<IconFont
+									type='icon-[fluent--weather-sunny-low-48-filled]'
+									size={16}
+								/>
+								<span className='ml-[4px] text-[12px] scale-80'>浅色模式</span>
+							</div>
+						</PopoverTrigger>
+						<PopoverContent>
+							<Tabs radius='full' aria-label='language'>
+								<Tab
+									key='light'
+									title={
+										<div className='flex items-center'>
+											<IconFont
+												type='icon-[fluent--weather-sunny-low-48-filled]'
+												className='mr-[4px]'
+												size={16}
+											/>{" "}
+											浅色模式
+										</div>
+									}
+								/>
+								<Tab
+									key='dark'
+									title={
+										<div className='flex items-center'>
+											<IconFont
+												type='icon-[fluent--weather-sunny-low-48-regular]'
+												className='mr-[4px]'
+												size={16}
+											/>{" "}
+											深色模式
+										</div>
+									}
+								/>
+								<Tab
+									key='auto'
+									title={
+										<div className='flex items-center'>
+											<IconFont
+												type='icon-[streamline--interface-weather-sun-photos-light-camera-mode-brightness-sun-photo-full]'
+												className='mr-[4px]'
+												size={16}
+											/>{" "}
+											跟随系统
+										</div>
+									}
+								/>
+							</Tabs>
+						</PopoverContent>
+					</Popover>
 				</NavbarItem>
 			</NavbarContent>
 		</Navbar>
