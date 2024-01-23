@@ -13,7 +13,7 @@ export default function IconFont({
 }: IIconFont) {
 	return (
 		<i
-			className={`${type} text-blog-text ${className}`}
+			className={`${type} ${className}`}
 			style={{
 				fontSize: size + "px",
 			}}
