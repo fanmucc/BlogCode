@@ -8,7 +8,7 @@ import BlogHeader from "@/components/BlogHeader";
 
 export default function Home() {
 	return (
-		<main className='grid min-h-full place-items-center bg-bg-a bg-blog-bg-color'>
+		<main className='max-w-[1024px] mx-auto grid min-h-full'>
 			<BlogHeader />
 			<div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>

@@ -28,6 +28,8 @@ import {
 import { Logo } from "@/components/Logo";
 import IconFont from "@/components/BusComponents/IconFont";
 
+import styles from "./index.module.css";
+
 const BlogHeader = () => {
 	const pathname = usePathname();
 	const [scroll, setScroll] = useState(false);
@@ -44,28 +46,31 @@ const BlogHeader = () => {
 	}, []);
 	return (
 		<Navbar
-			className={`h-[60px] bg-blog-bg-color ${
+			className={`fixed top-0 left-0 right-0 bg-blog-bg-color ${
 				scroll ? "bg-blog-card-bg outline-1 outline-bg-blog-card-bg" : ""
-			}`}
+			} ${styles.nav}`}
+			height={"60px"}
 		>
-			<NavbarBrand>
+			<NavbarContent justify='start'>
 				{/* <Logo /> */}
-				<div className='group h-[35px] w-[70px] cursor-pointer'>
-					<Link
-						className='relative h-[35px] w-[70px] flex items-center justify-center text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
-						href='/'
-					>
-						Fan'mu
-						<span className='hidden absolute left-0 top-0 h-[35px] w-[70px] bg-blog-text-primary/100 flex items-center justify-center group-hover:flex'>
-							<IconFont
-								type='icon-[material-symbols-light--home-rounded]'
-								size={28}
-								className='text-blog-card-bg'
-							/>
-						</span>
-					</Link>
-				</div>
-			</NavbarBrand>
+				<NavbarItem>
+					<div className='group h-[35px] w-[70px] cursor-pointer'>
+						<Link
+							className='relative h-[35px] w-[70px] flex items-center justify-center text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
+							href='/'
+						>
+							Fan'mu
+							<span className='hidden absolute left-0 top-0 h-[35px] w-[70px] bg-blog-text-primary/100 flex items-center justify-center group-hover:flex'>
+								<IconFont
+									type='icon-[material-symbols-light--home-rounded]'
+									size={28}
+									className='text-blog-card-bg'
+								/>
+							</span>
+						</Link>
+					</div>
+				</NavbarItem>
+			</NavbarContent>
 			<NavbarContent className='hidden sm:flex gap-16' justify='center'>
 				<NavbarItem>
 					<Link
@@ -168,63 +173,21 @@ const BlogHeader = () => {
 					</Popover>
 				</NavbarItem> */}
 				<NavbarItem>
-					<div
-						className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'
-						onClick={() => onOpen()}
-					>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
+						<IconFont type='icon-[ph--link-bold]' size={18} />
+					</div>
+				</NavbarItem>
+				<NavbarItem>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
+						<IconFont type='icon-[pajamas--search-sm]' size={18} />
+					</div>
+				</NavbarItem>
+				<NavbarItem>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
 						<IconFont type='icon-[mingcute--layout-6-fill]' size={18} />
 					</div>
 				</NavbarItem>
 			</NavbarContent>
-			<Modal
-				size={"full"}
-				isOpen={isOpen}
-				onClose={onClose}
-				classNames={{
-					body: "py-6",
-					backdrop: "bg-[#292f46]/50 backdrop-opacity-40",
-					base: "border-[#292f46] bg-[#19172c] dark:bg-[#19172c] text-[#a8b0d3]",
-					header: "border-b-[1px] border-[#292f46]",
-					footer: "border-t-[1px] border-[#292f46]",
-					closeButton: "hover:bg-white/5 active:bg-white/10",
-				}}
-			>
-				<ModalContent>
-					{(onClose) => (
-						<>
-							<ModalHeader className='lg flex flex-col gap-1'>
-								Modal Title
-							</ModalHeader>
-							<ModalBody>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nullam pulvinar risus non risus hendrerit venenatis.
-									Pellentesque sit amet hendrerit risus, sed porttitor quam.
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nullam pulvinar risus non risus hendrerit venenatis.
-									Pellentesque sit amet hendrerit risus, sed porttitor quam.
-								</p>
-								<p>
-									Magna exercitation reprehenderit magna aute tempor cupidatat
-									consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-									incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-									aliqua enim laboris do dolor eiusmod.
-								</p>
-							</ModalBody>
-							<ModalFooter>
-								<Button color='danger' variant='light' onPress={onClose}>
-									Close
-								</Button>
-								<Button color='primary' onPress={onClose}>
-									Action
-								</Button>
-							</ModalFooter>
-						</>
-					)}
-				</ModalContent>
-			</Modal>
 		</Navbar>
 	);
 };
