@@ -88,24 +88,67 @@ const BlogHeader = () => {
 					</NavbarItem>
 					<DropdownMenu
 						aria-label='ACME features'
-						className='w-[340px] bg-blog-card-bg'
+						className='w-[300px] bg-blog-card-bg'
 						itemClasses={{
 							base: "gap-4",
 						}}
 					>
 						<DropdownItem
-							key='autoscaling'
-							description='ACME scales apps to meet user demand, automagically, based on load.'
-							className='hover:!bg-blog-text-primary hover:!text-white'
+							key='blog_list'
+							// description={
+							// 	<span className='text-[12px]'>
+							// 		所有文章列表，个人的所有知识产出
+							// 	</span>
+							// }
+							// showDivider
+							className='py-[8px] !text-blog-text hover:!bg-blog-text-primary hover:!text-blog-black-white'
+							startContent={
+								<IconFont type='icon-[material-symbols--lists]' size={20} />
+							}
 						>
-							Autoscaling
+							<div className='text-[14px]'>文章列表</div>
+							<div className='mt-[8px] text-[12px]'>
+								所有文章列表，个人的所有知识产出
+							</div>
 						</DropdownItem>
 						<DropdownItem
-							key='usage_metrics'
-							description='Real-time metrics to debug issues. Slow query added? We’ll show you exactly where.'
-							className='hover:!bg-blog-text-primary hover:!text-white'
+							key='blog_series'
+							// description='一套按照顺序记录的文章列表'
+							className='py-[8px] !text-blog-text hover:!bg-blog-text-primary hover:!text-blog-black-white'
+							startContent={
+								<IconFont
+									type='icon-[fluent--number-row-20-filled]'
+									size={20}
+								/>
+							}
 						>
-							Usage Metrics
+							<div className='text-[14px]'>系列文章</div>
+							<div className='mt-[8px] text-[12px]'>
+								一套按照顺序记录的文章列表
+							</div>
+						</DropdownItem>
+						<DropdownItem
+							key='blog_sort'
+							// description='所有文章的分类'
+							className='py-[8px] !text-blog-text hover:!bg-blog-text-primary hover:!text-blog-black-white'
+							startContent={
+								<IconFont
+									type='icon-[icon-park-solid--category-management]'
+									size={20}
+								/>
+							}
+						>
+							<div className='text-[14px]'>全部分类</div>
+							<div className='mt-[8px] text-[12px]'>所有文章的分类</div>
+						</DropdownItem>
+						<DropdownItem
+							key='blog_tag'
+							// description='所有文章的标签'
+							className='py-[8px] !text-blog-text hover:!bg-blog-text-primary hover:!text-blog-black-white'
+							startContent={<IconFont type='icon-[mdi--tag-faces]' size={20} />}
+						>
+							<div className='text-[14px]'>全部标签</div>
+							<div className='mt-[8px] text-[12px]'>所有文章的标签</div>
 						</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>

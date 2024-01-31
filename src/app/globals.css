@@ -34,6 +34,10 @@
 		--blog-text-desc: 255, 255, 255;
 		/* 透明背景 */
 		--blog-bg-op: 0, 0, 0;
+		/* 公共使用的黑色 */
+		--blog-publish-text: 54, 54, 54;
+		/* 白天黑色字体夜晚白色 */
+		--blog-text-black-white: 255, 255, 255;
 	}
 }
 
@@ -60,6 +64,10 @@
 		--blog-text: 247, 247, 250;
 		/* 透明背景 */
 		--blog-bg-op: 255, 255, 255;
+		/* 公共使用的黑色 */
+		--blog-publish-text: 54, 54, 54;
+		/* 白天黑色字体夜晚白色 */
+		--blog-text-black-white: 54, 54, 54;
 	}
 }
 
@@ -93,6 +101,10 @@
 	--blog-text-desc: 255, 255, 255;
 	/* 透明背景 */
 	--blog-bg-op: 0, 0, 0;
+	/* 公共使用的黑色 */
+	--blog-publish-text: 54, 54, 54;
+	/* 白天黑色字体夜晚白色 */
+	--blog-text-black-white: 255, 255, 255;
 }
 
 :root .dark {
@@ -123,6 +135,10 @@
 	--blog-text-desc: 27, 28, 32;
 	/* 透明背景 */
 	--blog-bg-op: 255, 255, 255;
+	/* 公共使用的黑色 */
+	--blog-publish-text: 54, 54, 54;
+	/* 白天黑色字体夜晚白色 */
+	--blog-text-black-white: 54, 54, 54;
 }
 
 body {

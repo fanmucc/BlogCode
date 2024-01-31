@@ -37,7 +37,9 @@ const config: Config = {
         'blog-text': withOpacity('--blog-text'),
         'blog-text-black': withOpacity('--blog-text-black'),
         'blog-text-desc': withOpacity('--blog-text-desc'),
-        'blog-bg-op': withOpacity('--blog-bg-op')
+        'blog-bg-op': withOpacity('--blog-bg-op'),
+        'blog-publish-text': withOpacity('--blog-publish-text'),
+        'blog-black-white': withOpacity('--blog-text-black-white'),
       },
       boxShadow: {
         'blog-card-show': 'var(--blog-card-show)'
