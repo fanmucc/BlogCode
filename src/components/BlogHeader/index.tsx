@@ -28,7 +28,7 @@ import {
 import { Logo } from "@/components/Logo";
 import IconFont from "@/components/BusComponents/IconFont";
 
-import styles from "./index.module.css";
+import styles from "./blogheader.module.css";
 
 const BlogHeader = () => {
 	const pathname = usePathname();
@@ -56,7 +56,7 @@ const BlogHeader = () => {
 				<NavbarItem>
 					<div className='group h-[35px] w-[70px] cursor-pointer'>
 						<Link
-							className='relative h-[35px] w-[70px] flex items-center justify-center text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
+							className='relative h-[35px] w-[70px] flex items-center justify-start text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
 							href='/'
 						>
 							Fan'mu
@@ -72,15 +72,51 @@ const BlogHeader = () => {
 				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent className='hidden sm:flex gap-16' justify='center'>
+				<Dropdown className='p-[8px]'>
+					<NavbarItem>
+						<DropdownTrigger>
+							<Link
+								size='md'
+								// href='/'
+								aria-current='page'
+								// color={pathname === "/" ? "primary" : "foreground"}
+								className='text-[16px] font-[700] tracking-[6px] text-blog-text hover:text-blog-text-primary'
+							>
+								文库
+							</Link>
+						</DropdownTrigger>
+					</NavbarItem>
+					<DropdownMenu
+						aria-label='ACME features'
+						className='w-[340px] bg-blog-card-bg'
+						itemClasses={{
+							base: "gap-4",
+						}}
+					>
+						<DropdownItem
+							key='autoscaling'
+							description='ACME scales apps to meet user demand, automagically, based on load.'
+							className='hover:!bg-blog-text-primary hover:!text-white'
+						>
+							Autoscaling
+						</DropdownItem>
+						<DropdownItem
+							key='usage_metrics'
+							description='Real-time metrics to debug issues. Slow query added? We’ll show you exactly where.'
+							className='hover:!bg-blog-text-primary hover:!text-white'
+						>
+							Usage Metrics
+						</DropdownItem>
+					</DropdownMenu>
+				</Dropdown>
 				<NavbarItem>
 					<Link
 						size='md'
-						href='/'
-						aria-current='page'
-						// color={pathname === "/" ? "primary" : "foreground"}
+						// color={pathname === "/personal" ? "primary" : "foreground"}
+						href='/personal'
 						className='text-[16px] font-[700] tracking-[6px] text-blog-text hover:text-blog-text-primary'
 					>
-						文库
+						工具
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
@@ -173,17 +209,17 @@ const BlogHeader = () => {
 					</Popover>
 				</NavbarItem> */}
 				<NavbarItem>
-					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer text-blog-text hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
 						<IconFont type='icon-[ph--link-bold]' size={18} />
 					</div>
 				</NavbarItem>
 				<NavbarItem>
-					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer text-blog-text hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
 						<IconFont type='icon-[pajamas--search-sm]' size={18} />
 					</div>
 				</NavbarItem>
 				<NavbarItem>
-					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
+					<div className='w-[36px] h-[36px] flex items-center justify-center cursor-pointer text-blog-text hover:bg-blog-text-primary hover:rounded-[50%] hover:!text-blog-card-bg'>
 						<IconFont type='icon-[mingcute--layout-6-fill]' size={18} />
 					</div>
 				</NavbarItem>
