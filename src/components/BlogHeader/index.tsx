@@ -28,7 +28,7 @@ import {
 import { Logo } from "@/components/Logo";
 import IconFont from "@/components/BusComponents/IconFont";
 
-import styles from "./blogheader.module.css";
+import styles from "./blogheader.module.scss";
 
 const BlogHeader = () => {
 	const pathname = usePathname();

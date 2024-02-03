@@ -29,20 +29,43 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
+        // 蓝色和黄色
         'blog-text-primary': withOpacity('--blog-text-primary'),
+        // 蓝色
         'blog-hover': withOpacity('--blog-hover'),
+        // 灰色和黑色
         'blog-bg-color': withOpacity('--blog-bg-color'),
+        // 白色色和偏黑色
         'blog-card-bg': withOpacity('--blog-card-bg-color'),
+        // 灰色和偏黑色
         'blog-border-color': withOpacity('--blog-card-border-color'),
+        // 黑色和白色
         'blog-text': withOpacity('--blog-text'),
+        // 白色和黑色
         'blog-text-black': withOpacity('--blog-text-black'),
+        // 白色和黑色
         'blog-text-desc': withOpacity('--blog-text-desc'),
+        // 黑色和白色
         'blog-bg-op': withOpacity('--blog-bg-op'),
+        // 黑色
         'blog-publish-text': withOpacity('--blog-publish-text'),
+        // 白色和黑色
         'blog-black-white': withOpacity('--blog-text-black-white'),
       },
       boxShadow: {
         'blog-card-show': 'var(--blog-card-show)'
+      },
+      // 动画 帧
+      keyframes: {
+        banners: {
+          '0%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-50px)' },
+          '100%': { transform: 'translateY(-100px)' },
+        }
+      },
+      // 动画
+      animation: {
+        banners: 'banners 10s linear infinite 5s',
       }
     },
   },

@@ -5,11 +5,13 @@ import Cookies from "js-cookie";
 import TemplateSetting from "@/components/TemplateSetting";
 import { Button } from "@nextui-org/react";
 import BlogHeader from "@/components/BlogHeader";
+import TopBanner from "@/components/BusComponents/TopBanner";
 
 export default function Home() {
 	return (
-		<main className='max-w-[1024px] mx-auto grid min-h-full'>
+		<main className='max-w-[1024px] mx-auto pt-[60px] grid min-h-full'>
 			<BlogHeader />
+			<TopBanner />
 			<div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>
 				<h1 className='mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
