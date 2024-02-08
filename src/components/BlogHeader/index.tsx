@@ -40,7 +40,6 @@ const BlogHeader = () => {
 		const handleScroll = () => {
 			let scrollDistance = window.scrollY || document.documentElement.scrollTop;
 			setScroll(scrollDistance > 80);
-			console.log(scrollDistance);
 		};
 		document.addEventListener("scroll", handleScroll);
 	}, []);

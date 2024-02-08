@@ -9,7 +9,7 @@ import TopBanner from "@/components/BusComponents/TopBanner";
 
 export default function Home() {
 	return (
-		<main className='max-w-[1024px] mx-auto pt-[60px] grid min-h-full'>
+		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>
 			<BlogHeader />
 			<TopBanner />
 			<div className='text-center'>

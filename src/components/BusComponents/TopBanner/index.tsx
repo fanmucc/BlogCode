@@ -1,5 +1,10 @@
 // 引用的组件
+import Link from "next/link";
 import IconFont from "@/components/BusComponents/IconFont";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import styles from "./index.module.scss";
 
 const TopBanner = () => {
 	return (
@@ -7,19 +12,41 @@ const TopBanner = () => {
 			<div className='absolute left-4 w-[50px] text-[16px] font-semibold'>
 				热点
 			</div>
-			<div className='relative px-[50px] w-full text-[16px] h-full font-medium overflow-hidden'>
-				<div className='absolute left-0 right-0 top-0 bottom-0 h-full w-full animate-banners'>
-					<div className='flex flex-1 items-center justify-center h-full'>
+			<Swiper
+				className={`relative px-[50px] w-full text-[16px] h-full overflow-hidden ${styles["swiper-box"]}`}
+				direction={"vertical"}
+				modules={[Autoplay, Pagination]}
+				centeredSlides={false}
+				autoplay={{
+					delay: 3000,
+					disableOnInteraction: false,
+				}}
+			>
+				<SwiperSlide className='!w-full !h-full'>
+					<Link
+						className='flex flex-1 items-center justify-center h-full font-semibold'
+						href=''
+					>
 						内容1
-					</div>
-					<div className='flex flex-1 items-center justify-center h-full'>
+					</Link>
+				</SwiperSlide>
+				<SwiperSlide className='!w-full !h-full'>
+					<Link
+						className='flex flex-1 items-center justify-center h-full font-semibold'
+						href=''
+					>
 						内容2
-					</div>
-					<div className='flex flex-1 items-center justify-center h-full'>
+					</Link>
+				</SwiperSlide>
+				<SwiperSlide className='!w-full !h-full'>
+					<Link
+						className='flex flex-1 items-center justify-center h-full font-semibold'
+						href=''
+					>
 						内容3
-					</div>
-				</div>
-			</div>
+					</Link>
+				</SwiperSlide>
+			</Swiper>
 			<div className='absolute right-4 p-[4px] flex items-center justify-center bg-blog-bg-op rounded-[50%] hover:bg-blog-text-primary'>
 				<IconFont
 					type='icon-[teenyicons--right-small-outline]'
