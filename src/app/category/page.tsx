@@ -60,7 +60,7 @@ const Category = () => {
 					{categoryList.map((item) => {
 						return (
 							<Link
-								className={`${styles["category-list"]} py-[5px] px-[12px] flex items-center justify-center text-blog-text text-[22px] gap-[4px] bg-blog-bg-color border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show hover:bg-blog-text-primary hover:text-white`}
+								className={`${styles["category-list"]} py-[5px] px-[12px] flex items-center justify-center text-blog-text text-[22px] gap-[4px] bg-blog-card-bg border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show hover:bg-blog-text-primary hover:text-white`}
 								key={item.id}
 								href={item.href}
 							>
@@ -71,7 +71,7 @@ const Category = () => {
 								/>
 								{item.name}
 								<span
-									className={`p-[4px] flex items-center justify-center text-[20px] leading-[20px] text-blog-text/80 bg-blog-text-black/80 rounded-[8px] ${styles["category-list-num"]}`}
+									className={`p-[4px] flex items-center justify-center text-[20px] leading-[20px] text-blog-text/80 bg-blog-card-op-color rounded-[8px] ${styles["category-list-num"]}`}
 								>
 									{item.num}
 								</span>

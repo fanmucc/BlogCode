@@ -41,6 +41,8 @@
 		--blog-text-black-white: 255, 255, 255;
 		/* #号特殊颜色 */
 		--blog-symbol-color: 54, 54, 54;
+		/* 白色略灰背景色 */
+		--blog-card-op-color: 247, 247, 249;
 	}
 }
 
@@ -74,6 +76,8 @@
 		--blog-text-black-white: 54, 54, 54;
 		/* #号特殊颜色 */
 		--blog-symbol-color: 218, 218, 221;
+		/* 黑色略灰背景色 */
+		--blog-card-op-color: 33, 35, 42;
 	}
 }
 
@@ -114,6 +118,8 @@
 	--blog-text-black-white: 255, 255, 255;
 	/* #号特殊颜色 */
 	--blog-symbol-color: 54, 54, 54;
+	/* 白色略灰背景色 */
+	--blog-card-op-color: 247, 247, 249;
 }
 
 :root .dark {
@@ -151,6 +157,8 @@
 	--blog-text-black-white: 54, 54, 54;
 	/* #号特殊颜色 */
 	--blog-symbol-color: 218, 218, 221;
+	/* 黑色略灰背景色 */
+	--blog-card-op-color: 33, 35, 42;
 }
 
 body {

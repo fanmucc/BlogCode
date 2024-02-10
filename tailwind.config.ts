@@ -53,6 +53,8 @@ const config: Config = {
         'blog-black-white': withOpacity('--blog-text-black-white'),
         // #号特殊颜色 白色浅灰  黑色深灰
         'blog-symbol-text': withOpacity('--blog-symbol-color'),
+        // 白色略灰和黑色略灰
+        'blog-card-op-color': withOpacity('--blog-card-op-color')
       },
       boxShadow: {
         'blog-card-show': 'var(--blog-card-show)'

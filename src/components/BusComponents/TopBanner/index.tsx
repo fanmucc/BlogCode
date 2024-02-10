@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 
 const TopBanner = () => {
 	return (
-		<div className='relative py-2 px-4 flex items-center justify-between h-[50px] bg-blog-bg-color border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show text-blog-text hover:border-blog-text-primary'>
+		<div className='relative py-2 px-4 flex items-center justify-between h-[50px] bg-blog-card-bg border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show text-blog-text hover:border-blog-text-primary'>
 			<div className='absolute left-4 w-[50px] text-[16px] font-semibold'>
 				热点
 			</div>

@@ -10,7 +10,7 @@ type MenuItem = {
 const CategoryMenu = (props: { menu: MenuItem[] }) => {
 	const { menu } = props;
 	return (
-		<div className='py-[8px] px-[14px] flex items-center justify-start gap-[6px] h-[50px] bg-blog-bg-color border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show text-blog-text'>
+		<div className='py-[8px] px-[14px] flex items-center justify-start gap-[6px] h-[50px] bg-blog-card-bg border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show text-blog-text'>
 			{menu?.map((item: MenuItem) => {
 				return (
 					<div key={item?.id}>
