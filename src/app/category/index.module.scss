@@ -1,0 +1,10 @@
+.category-list {
+  transform: scale(1);
+  transition: all .3s ease 0s;
+  &:hover {
+    transform: scale(1.1);
+    .category-list-num {
+      color: var(--blog-text-primary-var);
+    }
+  }
+}
