@@ -6,12 +6,54 @@ import TemplateSetting from "@/components/TemplateSetting";
 import { Button } from "@nextui-org/react";
 import BlogHeader from "@/components/BlogHeader";
 import TopBanner from "@/components/BusComponents/TopBanner";
+import CategoryMenu from "@/components/BusComponents/CategoryMenu";
+
+const categoryList = [
+	{
+		name: "首页",
+		id: 0,
+		href: "/",
+	},
+	{
+		name: "我的项目",
+		id: 1,
+		href: "/",
+	},
+	{
+		name: "问题解决",
+		id: 2,
+		href: "/",
+	},
+	{
+		name: "Vue",
+		id: 3,
+		href: "/",
+	},
+	{
+		name: "React",
+		id: 4,
+		href: "/",
+	},
+	{
+		name: "NextJs",
+		id: 5,
+		href: "/",
+	},
+	{
+		name: "Node",
+		id: 6,
+		href: "/",
+	},
+];
 
 export default function Home() {
 	return (
 		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>
 			<BlogHeader />
 			<TopBanner />
+			<div className='w-full py-3'>
+				<CategoryMenu menu={categoryList} />
+			</div>
 			<div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>
 				<h1 className='mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
