@@ -13,7 +13,7 @@ const TopBanner = () => {
 				热点
 			</div>
 			<Swiper
-				className={`relative px-[50px] w-full text-[16px] h-full overflow-hidden ${styles["swiper-box"]}`}
+				className={`relative w-full text-[16px] h-full overflow-hidden ${styles["swiper-box"]}`}
 				direction={"vertical"}
 				modules={[Autoplay, Pagination]}
 				centeredSlides={false}

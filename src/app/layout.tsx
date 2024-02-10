@@ -25,7 +25,6 @@ export default function RootLayout({
 	const theme: RequestCookie | undefined = cookieStore.get(
 		"blog_next_theme_type"
 	);
-	console.log(theme, "===获取到theme===");
 	const themeValue: string = theme?.value || "";
 
 	return (
