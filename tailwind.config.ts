@@ -6,7 +6,6 @@ const { addDynamicIconSelectors } = require('@iconify/tailwind')
 function withOpacity(variableName: string): any {
   return ({ opacityValue }: any) => {
     console.log(opacityValue);
-
     if (opacityValue) {
       return `rgba(var(${variableName}), ${opacityValue})`;
     }
@@ -54,7 +53,9 @@ const config: Config = {
         // #号特殊颜色 白色浅灰  黑色深灰
         'blog-symbol-text': withOpacity('--blog-symbol-color'),
         // 白色略灰和黑色略灰
-        'blog-card-op-color': withOpacity('--blog-card-op-color')
+        'blog-card-op-color': withOpacity('--blog-card-op-color'),
+        /* 白天灰色和夜晚灰色*/
+        'blog-tag-color': withOpacity('--blog-tag-color')
       },
       boxShadow: {
         'blog-card-show': 'var(--blog-card-show)'

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
+    "axios": "^1.6.7",
     "framer-motion": "^10.17.9",
     "js-cookie": "^3.0.5",
     "next": "14.0.4",

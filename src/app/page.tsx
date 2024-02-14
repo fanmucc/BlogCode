@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+
 import Cookies from "js-cookie";
 
 import TemplateSetting from "@/components/TemplateSetting";
@@ -7,6 +7,7 @@ import { Button } from "@nextui-org/react";
 import BlogHeader from "@/components/BlogHeader";
 import TopBanner from "@/components/BusComponents/TopBanner";
 import CategoryMenu from "@/components/BusComponents/CategoryMenu";
+import BigBlogItem from "@/components/BusComponents/BlogCard/BigBlogItem";
 
 const categoryList = [
 	{
@@ -46,7 +47,7 @@ const categoryList = [
 	},
 ];
 
-export default function Home() {
+export default async function Home() {
 	return (
 		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>
 			<BlogHeader />
@@ -54,7 +55,13 @@ export default function Home() {
 			<div className='w-full py-3'>
 				<CategoryMenu menu={categoryList} />
 			</div>
-			<div className='text-center'>
+			<div className='grid grid-cols-2 gap-4'>
+				<BigBlogItem />
+				<BigBlogItem />
+				<BigBlogItem />
+				<BigBlogItem />
+			</div>
+			{/* <div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>
 				<h1 className='mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
 					文库正在建设中
@@ -122,8 +129,8 @@ export default function Home() {
 					</Button>
 					<Button color='primary'>Press me</Button>
 				</div>
-			</div>
-			<TemplateSetting />
+			</div> */}
+			{/* <TemplateSetting /> */}
 		</main>
 	);
 }

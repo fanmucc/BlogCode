@@ -43,6 +43,8 @@
 		--blog-symbol-color: 54, 54, 54;
 		/* 白色略灰背景色 */
 		--blog-card-op-color: 247, 247, 249;
+		/* 白天灰色和夜晚灰色*/
+		--blog-tag-color: 60, 60, 67;
 	}
 }
 
@@ -78,6 +80,8 @@
 		--blog-symbol-color: 218, 218, 221;
 		/* 黑色略灰背景色 */
 		--blog-card-op-color: 33, 35, 42;
+		/* 白天灰色和夜晚灰色*/
+		--blog-tag-color: 161, 162, 184;
 	}
 }
 
@@ -120,6 +124,8 @@
 	--blog-symbol-color: 54, 54, 54;
 	/* 白色略灰背景色 */
 	--blog-card-op-color: 247, 247, 249;
+	/* 白天灰色和夜晚灰色*/
+	--blog-tag-color: 60, 60, 67;
 }
 
 :root .dark {
@@ -159,6 +165,8 @@
 	--blog-symbol-color: 218, 218, 221;
 	/* 黑色略灰背景色 */
 	--blog-card-op-color: 33, 35, 42;
+	/* 白天灰色和夜晚灰色*/
+	--blog-tag-color: 161, 162, 184;
 }
 
 body {
