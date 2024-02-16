@@ -47,7 +47,20 @@ const categoryList = [
 	},
 ];
 
-export default async function Home() {
+async function getData() {
+	const res = await fetch("/api/home");
+	console.log(res, "====res====");
+
+	if (!res.ok) {
+		// 这会触发最近的 `error.js` 错误边界
+		throw new Error("Failed to fetch data");
+	}
+	return res.json();
+}
+
+export default function Home() {
+	const data = getData();
+	console.log(data);
 	return (
 		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>
 			<BlogHeader />
@@ -61,7 +74,7 @@ export default async function Home() {
 				<BigBlogItem />
 				<BigBlogItem />
 			</div>
-			{/* <div className='text-center'>
+			<div className='text-center'>
 				<p className='text-8xl font-semibold text-indigo-600'>404</p>
 				<h1 className='mt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
 					文库正在建设中
@@ -71,15 +84,15 @@ export default async function Home() {
 				</p>
 			</div>
 			<div className='flex flex-col bg-blog-bg-color p-20'>
-				<div className='text-2xl text-blog-text'>公共样式使用</div>
+				{/* <div className='text-2xl text-blog-text'>公共样式使用</div>
 				<div className='text-blog-text-primary'>主题色</div>
 				<div className='text-blog-text hover:text-blog-text-primary cursor-pointer'>
 					文字hover颜色
 				</div>
 				<div className='p-8 w-50 h-50 text-blog-text bg-blog-card-bg border-solid border-1 rounded-[12px] hover:bg-blog-text-primary hover:text-white cursor-pointer shadow-blog-card-show'>
 					我是一个卡片 圆角与边框色
-				</div>
-				<div className='flex gap-4 px-[10px] py-[8px] border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show'>
+				</div> */}
+				{/* <div className='flex gap-4 px-[10px] py-[8px] border-1 border-solid rounded-[12px] border-blog-border-color shadow-blog-card-show'>
 					<div
 						className='px-[16px] py-[8px] w-auto border-1 border-solid border-blog-border-color rounded-[8px] cursor-pointer text-blog-text-primary hover:bg-blog-text-primary hover:text-white dark:hover:text-blog-text'
 						onClick={() => {
@@ -118,8 +131,8 @@ export default async function Home() {
 					>
 						AUTO
 					</div>
-				</div>
-				<div className='mt-[20px]'>
+				</div> */}
+				{/* <div className='mt-[20px]'>
 					<Button
 						disableRipple
 						className="relative overflow-visible rounded-full hover:-translate-y-1 px-12 shadow-xl bg-background/30 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:!duration-500 hover:after:scale-150 hover:after:opacity-0 light:text-black dark:text-white"
@@ -128,8 +141,8 @@ export default async function Home() {
 						Press me
 					</Button>
 					<Button color='primary'>Press me</Button>
-				</div>
-			</div> */}
+				</div> */}
+			</div>
 			{/* <TemplateSetting /> */}
 		</main>
 	);

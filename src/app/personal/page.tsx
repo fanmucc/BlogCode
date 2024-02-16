@@ -1,4 +1,25 @@
-export default function Personal() {
+import { get } from "@/utils/request";
+
+import blog from "../index";
+
+async function getData() {
+	const res = await get("/api/home");
+	console.log(res, "====res====");
+
+	// if (!res.ok) {
+	// 	// 这会触发最近的 `error.js` 错误边界
+	// 	throw new Error("Failed to fetch data");
+	// }
+	// return res.json();
+	return [];
+}
+
+export default async function Personal() {
+	// const data = await getData();
+	// console.log(data);
+	let data = await blog();
+	console.log(data, "获取到的数据");
+
 	return (
 		<main className='grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8'>
 			<div className='text-center'>
