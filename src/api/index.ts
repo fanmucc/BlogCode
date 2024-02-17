@@ -23,10 +23,9 @@ export default async function blog() {
     // 启用mongo
     db();
     // 获取到相关接口
-    const data = await MongoBlog.find({});
-    console.log(data, '====~~~~====');
-
-    return data
+    let data = await MongoBlog.find({});
+    console.log(data, '返回的值mongodb');
+    return JSON.parse(JSON.stringify(data));
   } catch (err) {
     return []
   }

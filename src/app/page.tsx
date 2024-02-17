@@ -1,6 +1,6 @@
 "use client";
-
 import Cookies from "js-cookie";
+import blog from "@/api/index";
 
 import TemplateSetting from "@/components/TemplateSetting";
 import { Button } from "@nextui-org/react";
@@ -48,19 +48,14 @@ const categoryList = [
 ];
 
 async function getData() {
-	const res = await fetch("/api/home");
-	console.log(res, "====res====");
-
-	if (!res.ok) {
-		// 这会触发最近的 `error.js` 错误边界
-		throw new Error("Failed to fetch data");
-	}
-	return res.json();
+	let data = await blog();
+	console.log(data, "===获取到的数据===");
+	// return data;
+	return JSON.parse(JSON.stringify(data));
 }
 
 export default function Home() {
-	const data = getData();
-	console.log(data);
+	getData();
 	return (
 		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>
 			<BlogHeader />

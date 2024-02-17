@@ -7,6 +7,8 @@ const nextConfig = {
 	},
 	experimental: {
 		serverActions: true,
+		// 大小限制
+		// serverActionsBodySizeLimit: "2mb",
 	},
 };
 
