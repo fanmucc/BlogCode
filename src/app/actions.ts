@@ -4,7 +4,9 @@ import { redirect } from 'next/navigation'
 import { addNote, updateNote, delNote } from '@/lib/redis';
 import { revalidatePath } from 'next/cache';
 
-export async function saveNote(formData: any) {
+const sleep = (ms: any) => new Promise(r => setTimeout(r, ms));
+
+export async function saveNote(prevState: any, formData: any) {
 
   const noteId = formData.get('noteId')
 
@@ -14,21 +16,21 @@ export async function saveNote(formData: any) {
     updateTime: new Date()
   })
 
+  // 为了让效果更明显
+  await sleep(2000)
+
   if (noteId) {
     updateNote(noteId, data)
     revalidatePath('/', 'layout')
-    redirect(`/note/${noteId}`)
   } else {
     const res = await addNote(data)
     revalidatePath('/', 'layout')
-    redirect(`/note/${res}`)
   }
-
+  return { message: `Add Success!` }
 }
 
-export async function deleteNote(formData: any) {
+export async function deleteNote(prevState: any, formData: any) {
   const noteId = formData.get('noteId')
-
   delNote(noteId)
   revalidatePath('/', 'layout')
   redirect('/')
