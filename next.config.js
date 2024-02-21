@@ -2,6 +2,12 @@
 const path = require("path");
 
 const nextConfig = {
+	compilerOptions: {
+		paths: {
+			"@/components/*": ["components/*"],
+			"@/lib/*": ["lib/*"],
+		},
+	},
 	sassOptions: {
 		includePaths: [path.join(__dirname, "styles")],
 	},
