@@ -4,6 +4,7 @@ import Link from "next/link";
 import SidebarNoteList from "@/components/BlogDemo/SidebarNoteList";
 import EditButton from "@/components/BlogDemo/EditButton";
 import NoteListSkeleton from "../NoteListSkeleton";
+import SidebarSearchField from "@/components/BlogDemo/SidebarSearchField";
 
 export default async function Sidebar() {
 	// const notes = await getAllNotes();
@@ -25,7 +26,7 @@ export default async function Sidebar() {
 					</section>
 				</Link>
 				<section className='sidebar-menu' role='menubar'>
-					{/* SideSearchField */}
+					<SidebarSearchField />
 					<EditButton>New</EditButton>
 				</section>
 				<nav>

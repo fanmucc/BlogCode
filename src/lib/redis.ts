@@ -11,13 +11,16 @@ const initialData = {
 export async function getAllNotes() {
   const data = await redis.hgetall("notes");
   if (Object.keys(data).length == 0) {
+    // 如果没有则填充默认数据
     await redis.hset("notes", initialData);
   }
+  // 返回列表
   return await redis.hgetall("notes")
 }
 
 export async function addNote(data: any) {
   const uuid = Date.now().toString();
+  // notes表 填充数据
   await redis.hset("notes", [uuid], data);
   return uuid
 }
