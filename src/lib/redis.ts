@@ -1,14 +1,14 @@
 import Redis from 'ioredis'
 
-// const redis = new Redis()
+const redis = new Redis()
 // Connect to 127.0.0.1:6379
 // const redis = new Redis(6379, '127.0.0.1');
-const redis = new Redis({
-  port: 6399, // Redis port
-  host: "127.0.0.1", // Redis host
-  username: "blog", // needs Redis >= 6
-  password: "WENqiang123",
-})
+// const redis = new Redis({
+//   port: 6399, // Redis port
+//   host: "127.0.0.1", // Redis host
+//   username: "blog", // needs Redis >= 6
+//   password: "WENqiang123",
+// })
 
 const initialData = {
   "1702459181837": '{"title":"sunt aut","content":"quia et suscipit suscipit recusandae","updateTime":"2023-12-13T09:19:48.837Z"}',
