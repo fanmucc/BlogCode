@@ -8,7 +8,6 @@ import {
 	NavbarContent,
 	NavbarItem,
 	Link,
-	Button,
 	DropdownItem,
 	DropdownTrigger,
 	Dropdown,
@@ -48,7 +47,7 @@ const BlogHeader = () => {
 							className='relative h-[35px] w-[70px] flex items-center justify-start text-[16px] font-[700] text-blog-text rounded-[40px] overflow-hidden'
 							href='/'
 						>
-							Fan'mu
+							{`Fan'mu`}
 							<span className='hidden absolute left-0 top-0 h-[35px] w-[70px] bg-blog-text-primary/100 flex items-center justify-center group-hover:flex'>
 								<IconFont
 									type='icon-[material-symbols-light--home-rounded]'

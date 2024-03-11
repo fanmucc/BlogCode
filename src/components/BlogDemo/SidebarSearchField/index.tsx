@@ -18,7 +18,7 @@ export default function SidebarSearchField() {
 	const pathname = usePathname();
 	const [isPending, startTransition] = useTransition();
 
-	function handleSearch(term) {
+	function handleSearch(term: any) {
 		const params = new URLSearchParams(window.location.search);
 		if (term) {
 			params.set("q", term);

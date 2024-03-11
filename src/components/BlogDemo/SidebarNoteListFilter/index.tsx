@@ -8,7 +8,7 @@ export default function SidebarNoteList({ notes }: any) {
 	const searchText = searchParams.get("q");
 	return (
 		<ul className='notes-list'>
-			{notes.map((noteItem) => {
+			{notes.map((noteItem: any) => {
 				const { noteId, note, header } = noteItem;
 				if (
 					!searchText ||

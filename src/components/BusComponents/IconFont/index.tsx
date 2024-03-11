@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 interface IIconFont {
 	type: string;
 	className?: string;

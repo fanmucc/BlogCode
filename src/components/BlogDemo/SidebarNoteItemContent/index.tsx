@@ -24,6 +24,7 @@ export default function SidebarNoteContent({
 	useEffect(() => {
 		if (title !== prevTitleRef.current) {
 			prevTitleRef.current = title;
+			// @ts-ignore
 			itemRef.current.classList.add("flash");
 		}
 	}, [title]);
@@ -32,6 +33,7 @@ export default function SidebarNoteContent({
 		<div
 			ref={itemRef}
 			onAnimationEnd={() => {
+				// @ts-ignore
 				itemRef.current.classList.remove("flash");
 			}}
 			className={[
@@ -55,6 +57,7 @@ export default function SidebarNoteContent({
 				onClick={() => {
 					const sidebarToggle = document.getElementById("sidebar-toggle");
 					if (sidebarToggle) {
+						// @ts-ignore
 						sidebarToggle.checked = true;
 					}
 					router.push(`/note/${id}`);
