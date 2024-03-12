@@ -74,9 +74,7 @@ services:
     image: nginx
     container_name: note-dev-nginx
     volumes:
-      - ./docker/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/ssl/notes.yayujs.com.key:/etc/nginx/ssl/notes.yayujs.com.key
-      - ./docker/ssl/notes.yayujs.com.pem:/etc/nginx/ssl/notes.yayujs.com.pem
+      - note-dev-nginx-conf:/etc/nginx
     ports:
       - 80:80
       - 443:443
@@ -90,3 +88,4 @@ services:
 volumes:
   note-dev-data:
   note-dev-mysql:
+  note-dev-nginx-conf:
