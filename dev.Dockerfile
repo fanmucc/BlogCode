@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . .
 
 # 指定node源
-RUN npm i --registry=https://registry.npmmirror.com;
+# RUN npm i --registry=https://registry.npmmirror.com;
 
 # 修改相关脚本文件权限，使其成为可以执行的文件
 RUN chmod +x /app/dev.startup.sh
