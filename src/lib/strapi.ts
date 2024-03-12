@@ -4,8 +4,6 @@ export async function getAllNotes() {
       mode: 'no-cors'
     })
     const data = await response.json();
-    console.log(data, '====');
-
     const res = {};
 
     data.data.forEach(({ id, attributes: { title, content, slug, updatedAt } }: any) => {
@@ -19,7 +17,6 @@ export async function getAllNotes() {
 
     return res
   } catch (err) {
-    console.log(err, '====接口报错catch====');
   }
 }
 

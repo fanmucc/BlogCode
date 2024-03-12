@@ -1,0 +1,92 @@
+version: "3.8"
+
+# 配置容器连接的网络
+# 这指定了网络的类型。bridge是Docker网络的默认驱动，它为容器提供了一个隔离的网络环境。在桥接网络中，容器可以通过网络桥接接口互相通信，并且可以通过宿主机的端口暴露服务。
+networks:
+  react-notes-dev:
+    driver: bridge
+
+# 服务
+services:
+  # 定义服务名，唯一
+  next-app-dev:
+    # 容器运行时的名字
+    container_name: note-dev
+    # 指定如何构建容器镜像
+    build:
+      # 默认为同级的当前目录
+      context: .
+      # 指定构建镜像时使用的Dockerfile文件
+      dockerfile: dev.Dockerfile
+    # 镜像版本号
+    image: note-dev:1.0.0
+    # 指定容器运行时的环境变量
+    env_file:
+      # - .env
+      - .env.development
+    # 容器卷，都挂载到宿主机目录的/app下面
+    volumes:
+      - note-dev-data:/app
+    # 设置为always意味着如果容器退出，Docker Compose会始终尝试重新启动它。
+    restart: always
+    # 映射到宿主机的端口号
+    ports:
+      - 3000:3000
+    # 指定服务连接到的网络列表，这里连接到前面定义的react-notes-dev网络。
+    networks:
+      - react-notes-dev
+    # 示next-app-dev服务依赖于名为mysql的服务，并且它将等待mysql服务变得健康（service_healthy）后才会启动。这通常意味着MySQL服务已经准备好接受连接
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    # 使用到的镜像
+    image: mysql:8.0
+    # 容器名
+    container_name: note-dev-mysql
+    # 自定义容器启动时执行的命令。这里指定了MySQL的默认认证插件为caching_sha2_password
+    command: --default-authentication-plugin=caching_sha2_password
+    # 设置为unless-stopped意味着容器会自动重启，除非它被手动停止。
+    restart: unless-stopped
+    volumes:
+      - note-dev-mysql:/var/lib/mysql/
+    # env_file:
+    #   - .env.development
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    # 定义了健康检查的参数，用于确定容器是否健康运行。这里使用mysqladmin ping命令来检查服务是否响应。检查间隔是每5秒一次，超时时间是2秒，失败重试次数为20次。
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h127.0.0.1", "-P3306"]
+      interval: 5s
+      timeout: 2s
+      retries: 20
+    networks:
+      - react-notes-dev
+
+  # nginx
+  nginx:
+    image: nginx
+    container_name: note-dev-nginx
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/ssl/notes.yayujs.com.key:/etc/nginx/ssl/notes.yayujs.com.key
+      - ./docker/ssl/notes.yayujs.com.pem:/etc/nginx/ssl/notes.yayujs.com.pem
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    networks:
+      - react-notes-dev
+    depends_on:
+      - next-app-dev
+
+# 在文件底部添加下面的内容来定义卷
+volumes:
+  note-dev-data:
+  note-dev-mysql:
