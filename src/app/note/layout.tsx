@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Sidebar from "@/components/BlogDemo/Sidebar";
+// import Sidebar from "@/components/BlogDemo/Sidebar";
 
 export default async function RootLayout({
 	children,
@@ -9,8 +9,9 @@ export default async function RootLayout({
 	return (
 		<div className='container'>
 			<div className='main'>
-				<Sidebar />
-				<section className='col note-viewer'>{children}</section>
+				123
+				{/* <Sidebar />
+				<section className='col note-viewer'>{children}</section> */}
 			</div>
 		</div>
 	);
