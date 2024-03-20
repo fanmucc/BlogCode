@@ -47,16 +47,6 @@ const categoryList = [
 	},
 ];
 
-async function getData() {
-	// let data = await blog();
-	// console.log(data, "===获取到的数据===");
-	// return data;
-	// return JSON.parse(JSON.stringify(data));
-	console.log("===data");
-	// let data = getAllNotes();
-	console.log(data, "===data");
-}
-
 export default function Home() {
 	return (
 		<main className='max-w-[1024px] mx-auto pt-[80px] grid min-h-full'>

@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  // binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 datasource db {
@@ -7,6 +8,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// 文章列表
 model Note {
   id        String   @id @default(cuid())
   title     String   @db.VarChar(255)
@@ -16,9 +18,26 @@ model Note {
   authorId  String
 }
 
+// 分类
 model Category {
   id       Int    @id @default(autoincrement())
   name     String @db.VarChar(255)
   href     String
   quantity Int    @default(0)
+}
+
+// 标签
+model Tags {
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(255)
+  href     String
+  quantity Int    @default(0)
+}
+
+// 用户信息
+model UserContent {
+  id           String @id @default(cuid())
+  name         String @db.VarChar(255)
+  introduction String @db.VarChar(255)
+  email        String @db.VarChar(255)
 }
